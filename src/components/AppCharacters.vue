@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-  <section class="container p-5">
+  <section class="container p-5 m-auto">
     <div id="chars-founded" class="p-3">Fount 62 characters</div>
     <div class="row text-center justify-content-evenly">
       <CharacterCard
