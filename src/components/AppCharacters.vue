@@ -1,13 +1,36 @@
 <script>
+import axios from "axios";
+import CharacterCard from "./CharacterCard.vue";
+
 export default {
-  setup() {
-    return {};
+  components: {
+    CharacterCard,
+  },
+  data() {
+    return {
+      characters: [],
+    };
+  },
+  created() {
+    axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => {
+      this.characters = resp.data;
+      console.log(resp);
+    });
   },
 };
 </script>
 
 <template>
-  <div></div>
+  <section class="container p-5">
+    <div id="chars-founded" class="p-3">Fount 62 characters</div>
+    <div class="row text-center justify-content-evenly">
+      <CharacterCard
+        v-for="character in characters"
+        class="col-sm-6 col-md-3 col-lg-2"
+        :info="character"
+      />
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped></style>
