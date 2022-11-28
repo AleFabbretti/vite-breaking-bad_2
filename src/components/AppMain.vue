@@ -1,13 +1,18 @@
 <script>
+import AppCategory from "./AppCategory.vue";
+import AppCharacters from "./AppCharacters.vue";
+
 export default {
-  setup() {
-    return {};
+  components: {
+    AppCategory,
+    AppCharacters,
   },
 };
 </script>
 
 <template>
-  <div></div>
+  <AppCategory />
+  <AppCharacters />
 </template>
 
 <style lang="scss" scoped></style>
