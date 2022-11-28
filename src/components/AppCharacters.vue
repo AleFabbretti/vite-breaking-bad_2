@@ -33,4 +33,12 @@ export default {
   </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container {
+  background-color: white;
+}
+#chars-founded {
+  background-color: #212529;
+  color: white;
+}
+</style>
