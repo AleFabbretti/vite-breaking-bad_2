@@ -16,6 +16,7 @@ export default {
       class="form-select w-auto"
       name="status"
       aria-label="Default select example"
+      v-model="store.selectedValue"
     >
       <option value="" selected>Select category</option>
       <option value="Breaking Bad">Breaking Bad</option>
