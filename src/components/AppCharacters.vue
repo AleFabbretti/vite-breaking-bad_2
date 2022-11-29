@@ -1,5 +1,7 @@
 <script>
 import axios from "axios";
+import { store } from "../store.js";
+
 import CharacterCard from "./CharacterCard.vue";
 
 export default {
@@ -8,6 +10,7 @@ export default {
   },
   data() {
     return {
+      store,
       characters: [],
     };
   },
