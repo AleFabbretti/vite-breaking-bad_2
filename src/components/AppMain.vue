@@ -14,17 +14,28 @@ export default {
       store,
     };
   },
+  methods: {
+    filterCategory() {
+      axios
+        .get("https://www.breakingbadapi.com/api/characters", {
+          params: {
+            category: this.store.selectedValue,
+          },
+        })
+        .then((resp) => {
+          this.store.characters = resp.data;
+          console.log(resp);
+        });
+    },
+  },
   created() {
-    axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => {
-      this.store.characters = resp.data;
-      console.log(resp);
-    });
+    this.filterCategory();
   },
 };
 </script>
 
 <template>
-  <AppCategory />
+  <AppCategory @search="filterCategory" />
   <AppCharacters />
 </template>
 

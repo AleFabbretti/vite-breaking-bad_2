@@ -12,12 +12,19 @@ export default {
       store,
     };
   },
+  computed: {
+    totalCharacters() {
+      return store.characters.length;
+    },
+  },
 };
 </script>
 
 <template>
   <section class="container p-5 m-auto">
-    <div id="chars-founded" class="p-3">Fount 62 characters</div>
+    <div id="chars-founded" class="p-3">
+      <h3>Found {{ totalCharacters }} characters</h3>
+    </div>
     <div class="row text-center justify-content-evenly">
       <CharacterCard
         v-for="character in store.characters"

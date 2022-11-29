@@ -14,9 +14,9 @@ export default {
   <section class="container pb-4 pl-3">
     <select
       class="form-select w-auto"
-      name="status"
-      aria-label="Default select example"
       v-model="store.selectedValue"
+      aria-label="Default select example"
+      @change="$emit('search')"
     >
       <option value="" selected>Select category</option>
       <option value="Breaking Bad">Breaking Bad</option>
